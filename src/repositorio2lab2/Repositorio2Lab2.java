@@ -14,14 +14,6 @@ import javax.swing.JFrame;
 public class Repositorio2Lab2 {
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame();
         
-        frame.setSize(500,500); 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-        frame.setLocationRelativeTo(null); 
-        frame.setResizable(false);
-        frame.setTitle("Gestión de Empleados en una Empresa");
-        frame.setVisible(true);
-        frame.getContentPane().setBackground(new Color(0xEBB8DD));
     }
 }

@@ -5,6 +5,7 @@
 package repositorio2lab2;
 
 import java.util.Calendar;
+import javax.swing.JOptionPane;
 
 public class Empleado {
     int CodigoUnico;
@@ -31,11 +32,11 @@ public class Empleado {
     
     public void RegistroHorasTrabajadas(int horas){
         if (horas<0) {
-            System.out.println("No existen horas negativas");
+            JOptionPane.showMessageDialog(null, "No existen horas negativas");
             return;
         }
         this.HorasTrabajadas += horas;
-        System.out.println("El numero de horas trabajados son: "+ horas);
+        JOptionPane.showMessageDialog(null, "El numero de horas trabajados son: "+ horas);
     }
     
     public double CalculoDePago(){
@@ -47,12 +48,10 @@ public class Empleado {
     }
     
     public void MostrarInformacion(){
-        System.out.println("El nombre del empleado es: " +Nombre);
-        System.out.println("El salario base del empleado "+Nombre+" es de: " + SalarioBase);
-        System.out.println("El empleado "+ Nombre+ "Trabajo "+HorasTrabajadas+" horas");
-        System.out.println("Su salario final es de: "+ CalculoDePago());
-                
-        
+        JOptionPane.showMessageDialog(null,"El nombre del empleado es: " +Nombre);
+        JOptionPane.showMessageDialog(null,"El salario base del empleado "+Nombre+" es de: " + SalarioBase);
+        JOptionPane.showMessageDialog(null,"El empleado "+ Nombre+ "Trabajo "+HorasTrabajadas+" horas");
+        JOptionPane.showMessageDialog(null,"Su salario final es de: "+ CalculoDePago());  
     }
         
     

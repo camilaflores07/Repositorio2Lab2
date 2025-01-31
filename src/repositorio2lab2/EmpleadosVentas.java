@@ -12,11 +12,11 @@ import java.util.Calendar;
  */
 public class EmpleadosVentas extends Empleado{
      private int[] ventasmen;
-    private double tasacomision;
+    private final double tasacomision;
 
     public EmpleadosVentas(int CodigoUnico, String Nombre, Calendar FechaContratacion, double SalarioBase, int HorasTrabajadas, double tasaComision) {
         super(CodigoUnico, Nombre, FechaContratacion, SalarioBase, HorasTrabajadas);
-        this.tasacomision = tasacomision;
+        this.tasacomision = 0.05;
         this.ventasmen = new int[12];
     }
 

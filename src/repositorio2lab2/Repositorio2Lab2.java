@@ -7,6 +7,7 @@ package repositorio2lab2;
 import java.awt.Color;
 import javax.swing.JFrame;
 
+
 /**
  *
  * @author 50494
@@ -14,6 +15,8 @@ import javax.swing.JFrame;
 public class Repositorio2Lab2 {
 
     public static void main(String[] args) {
+            GUIFRAME gui = new GUIFRAME();
+            gui.setVisible(true);
         
     }
-}
+    }

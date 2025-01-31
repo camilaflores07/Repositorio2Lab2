@@ -4,15 +4,13 @@
  */
 package repositorio2lab2;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GridLayout;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.border.EmptyBorder;
 
 public class GUIFRAME extends JFrame {
-
     public GUIFRAME() {
         setTitle("Gestión de Empresa");
         setSize(600, 400);
@@ -23,7 +21,7 @@ public class GUIFRAME extends JFrame {
         mainPanel.setBackground(new Color(255, 192, 203));
         mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        JLabel titleLabel = new JLabel("Gestión de Empleados", SwingConstants.CENTER);
+        JLabel titleLabel = new JLabel("Gestion de Empleados", SwingConstants.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
         titleLabel.setForeground(Color.BLACK);
         mainPanel.add(titleLabel, BorderLayout.NORTH);
@@ -44,8 +42,43 @@ public class GUIFRAME extends JFrame {
         buttonPanel.add(btnGenerarReporte);
 
         mainPanel.add(buttonPanel, BorderLayout.CENTER);
-
         add(mainPanel);
+
+       
+        btnRegistrarEmpleado.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                registrarEmpleado();  
+            }
+        });
+
+        btnRegistrarHoras.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+            }
+        });
+
+        btnRegistrarVentas.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                registrarVentas();
+            }
+        });
+
+        btnCalcularPago.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calcularPagoMensual();
+            }
+        });
+
+        btnGenerarReporte.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                generarReporte();
+            }
+        });
     }
 
     private JButton createButton(String text) {
@@ -57,10 +90,26 @@ public class GUIFRAME extends JFrame {
         return button;
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            GUIFRAME gui = new GUIFRAME();
-            gui.setVisible(true);
-        });
+   
+    private void registrarEmpleado() {
+        String Nombre = JOptionPane.showInputDialog("El nombre del empleado es: ");
     }
+
+    private void registrarHorasTrabajadas() {
+        JOptionPane.showMessageDialog(this, "Función de Registrar Horas Trabajadas en desarrollo.");
+    }
+
+    private void registrarVentas() {
+        JOptionPane.showMessageDialog(this, "Función de Registrar Ventas en desarrollo.");
+    }
+
+    private void calcularPagoMensual() {
+        JOptionPane.showMessageDialog(this, "Función de Calcular Pago Mensual en desarrollo.");
+    }
+
+    private void generarReporte() {
+        JOptionPane.showMessageDialog(this, "Función de Generar Reporte en desarrollo.");
+    }
+
+   
 }

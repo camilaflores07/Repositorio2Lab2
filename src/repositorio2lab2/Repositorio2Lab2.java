@@ -16,7 +16,7 @@ public class Repositorio2Lab2 {
 
     public static void main(String[] args) {
             GUIFRAME gui = new GUIFRAME();
-            gui.setVisible(true);
-        
+            //gui.setVisible(true);
+            gui.pantalla.setVisible(true);
     }
     }

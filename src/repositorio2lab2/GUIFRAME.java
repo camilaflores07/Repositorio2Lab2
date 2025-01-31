@@ -11,45 +11,62 @@ import java.awt.event.ActionListener;
 import javax.swing.border.EmptyBorder;
 
 public class GUIFRAME extends JFrame {
+
+    JFrame pantalla;
+
     public GUIFRAME() {
-        
-       
-       setTitle("Pantalla Principal");
-        setSize(500, 400);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        
+
+        pantalla = new JFrame();
+
+        pantalla.setTitle("Pantalla Principal");
+        pantalla.setSize(500, 400);
+        pantalla.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pantalla.setLocationRelativeTo(null);
+
         JPanel main1Panel = new JPanel(new BorderLayout());
         main1Panel.setBackground(new Color(255, 192, 203));
         main1Panel.setBorder(new EmptyBorder(20, 20, 20, 20));
-        
+
         JLabel titleLabel1 = new JLabel("Pantalla Principal", SwingConstants.CENTER);
         titleLabel1.setFont(new Font("Arial", Font.BOLD, 24));
         titleLabel1.setForeground(Color.WHITE);
         main1Panel.add(titleLabel1, BorderLayout.NORTH);
-        
+
         JButton btnRegistrarEmpleado = createButton("Registrar Empleado");
         JButton btnGenerarReporte = createButton("Generar Reporte");
         JButton btnBuscarEmpleadosporCodigo = createButton("Buscar Empleados por Codigo");
-        
+
         JPanel buttonPanel1 = new JPanel(new GridLayout(5, 1, 10, 10));
         buttonPanel1.setBackground(new Color(255, 192, 203));
-        
+
         buttonPanel1.add(btnRegistrarEmpleado);
         buttonPanel1.add(btnGenerarReporte);
         buttonPanel1.add(btnBuscarEmpleadosporCodigo);
-        
+
         main1Panel.add(buttonPanel1, BorderLayout.CENTER);
-        add(main1Panel);
-        
-        btnRegistrarEmpleado.addActionListener(e -> registrarEmpleado());
+        pantalla.add(main1Panel);
+
+        btnRegistrarEmpleado.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pantalla.dispose();
+                RegistrarEmpleado();
+
+            }
+        });
         btnGenerarReporte.addActionListener(e -> generarReporte());
         btnBuscarEmpleadosporCodigo.addActionListener(e -> BuscarEmpleadosporCodigo());
-        
-        setTitle("Gestión de Empresa");
-        setSize(700, 500);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
+    }
+    //////////////////////////////////////////////////////////
+
+    public void RegistrarEmpleado() {
+
+        pantalla = new JFrame();
+        pantalla.setVisible(true);
+        pantalla.setTitle("Gestión de Empresa");
+        pantalla.setSize(700, 500);
+        pantalla.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pantalla.setLocationRelativeTo(null);
 
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.setBackground(new Color(255, 192, 203));
@@ -76,9 +93,8 @@ public class GUIFRAME extends JFrame {
         buttonPanel.add(btnSalir);
 
         mainPanel.add(buttonPanel, BorderLayout.CENTER);
-        add(mainPanel);
+        pantalla.add(mainPanel);
 
-        btnRegistrarHoras.addActionListener(e -> RegistrarHoras.registrar(this));
         btnRegistrarVentas.addActionListener(e -> RegistrarVenta());
         btnActualizarFechaFinContrato.addActionListener(e -> ActualizarFechaFinContrato());
         btnCalcularPago.addActionListener(e -> calcularPagoMensual());
@@ -94,10 +110,21 @@ public class GUIFRAME extends JFrame {
         return button;
     }
 
-    private void registrarEmpleado() {}
-    private void RegistrarVenta() {}
-    private void ActualizarFechaFinContrato() {}
-    private void calcularPagoMensual() {}
-    private void generarReporte() {}
-    private void BuscarEmpleadosporCodigo() {}
+    private void registrarEmpleado() {
+    }
+
+    private void RegistrarVenta() {
+    }
+
+    private void ActualizarFechaFinContrato() {
+    }
+
+    private void calcularPagoMensual() {
+    }
+
+    private void generarReporte() {
+    }
+
+    private void BuscarEmpleadosporCodigo() {
+    }
 }

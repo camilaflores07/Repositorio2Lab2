@@ -14,8 +14,8 @@ public class EmpleadosVentas extends Empleado{
      private int[] ventasmen;
     private double tasacomision;
 
-    public EmpleadosVentas(int CodigoUnico, String Nombre, double SalarioBase, int HorasTrabajadas, double tasaComision) {
-        super(CodigoUnico, Nombre, SalarioBase,FechaContratacion, HorasTrabajadas);
+    public EmpleadosVentas(int CodigoUnico, String Nombre, Calendar FechaContratacion, double SalarioBase, int HorasTrabajadas, double tasaComision) {
+        super(CodigoUnico, Nombre, FechaContratacion, SalarioBase, HorasTrabajadas);
         this.tasacomision = tasacomision;
         this.ventasmen = new int[12];
     }
@@ -45,7 +45,8 @@ public class EmpleadosVentas extends Empleado{
 
     @Override
     public void MostrarInformacion() {
-        return super.MostrarInformacion() + ", Ventas anuales: " + calcularVentasAnuales();
+        super.MostrarInformacion();
+        System.out.println(", Ventas anuales: " + calcularVentasAnuales());
     }
 
 }
